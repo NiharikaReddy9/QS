@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <!-- You can override this in code using System.setProperty -->
+    <Properties>
+        <Property name="filename">C:\Users\Windows\Downloads\Framework\QA-Strengths\src\test\java\BSelenium\Logs_TS</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- Console output -->
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+
+        <!-- File output, path controlled by ${filename} -->
+        <File name="FILE" fileName="${filename}/ORHM_Automation.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <!-- Logger for specific package -->
+        <Logger name="BSelenium.AE" level="INFO" additivity="false">
+            <AppenderRef ref="FILE"/>
+        </Logger>
+
+        <!-- Root logger -->
+        <Root level="ERROR">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
