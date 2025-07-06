@@ -9,10 +9,11 @@ import java.io.IOException;
 
 public class AElements2 {
     @Test
-    public void openLoginPage() {
+    public void openLoginPage() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        Thread.sleep(5000);
     }
 }
